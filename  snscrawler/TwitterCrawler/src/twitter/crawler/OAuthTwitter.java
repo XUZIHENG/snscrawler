@@ -166,15 +166,15 @@ public class OAuthTwitter{
 		try {
 			twitter.updateStatus(updatesString);
 		} catch (TwitterException e) {
-			System.out.println("update twitter status failed");
+			System.out.println("Failed to update the status");
 			e.printStackTrace();
 			return false;
 		}
-		System.out.println("update twitter status success");
+		System.out.println("Successfully updated the status to [" + updatesString + "].");
 		return true;
 	}
 	public static void main(String[] args) {
 		OAuthTwitter oAuthTwitter=new OAuthTwitter("snscrawler.properties");
-		oAuthTwitter.oAuthUpdate(oAuthTwitter.oAuthLogin(), "@kobe00712 大宝贝，哥给空老师发推去！");
+		oAuthTwitter.oAuthUpdate(oAuthTwitter.oAuthLogin(), "@xieyi64 回fo");
 	}
 }	
