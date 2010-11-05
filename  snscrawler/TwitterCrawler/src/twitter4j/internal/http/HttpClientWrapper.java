@@ -70,6 +70,15 @@ public final class HttpClientWrapper implements java.io.Serializable {
     }
     private HttpResponse request(HttpRequest req) throws TwitterException {
         HttpResponse res = http.request(req);
+        /*while(res.getStatusCode()!=200){
+        	try {
+        		System.out.println("Twitter Server Return "+res.getStatusCode()+" StatusCode");
+				Thread.sleep(5*1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        }*/
         //fire HttpResponseEvent
         if (null != httpResponseListener) {
             httpResponseListener.httpResponseReceived(new HttpResponseEvent(req, res));
